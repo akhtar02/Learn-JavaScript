@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Browswer Control</title>
+    <script>
+        // var location = 'http://localhost:8080'
+        // function changehref() {
+        //     window.location.href = "https://www.google.com/"
+        //     window.location.assign("https://www.google.com/")
+        //     window.location.replace("https://www.google.com/")
+        // }
+
+        function openPopup() {
+            var newPopup = window.open('https://www.google.com/', '', 'width=500,height=600,top=200,left=500');
+            if (newPopup === null) {
+                alert("Please disable your popup blocker.");
+
+            } else {
+                console.log("popup allowed.")
+            }
+            // var newFunc = function () {
+            //     // newPopup.close();
+            // }
+            // setTimeout(newFunc, 5000)
+            // var p = '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea iste impedit vero, enim eligendi recusandae asperiores cumque necessitatibus non obcaecati excepturi maiores quisquam, sunt esse veniam consectetur commodi accusantium ducimus.</p>'
+            // newPopup.document.write(p);
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <button onclick="changehref()">Change it</button>
+    <a href="javascript:void(0)" onclick="changehref()">LinkedIn</a> -->
+    <button onclick="openPopup()">open Popup</button>
+</body>
+
+</html>
