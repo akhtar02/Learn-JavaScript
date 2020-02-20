@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HOF</title>
+</head>
+
+<body>
+    <script>
+
+        // Try catch
+        // Try catch finally
+        // SetTimeout
+        // setInterval
+
+
+        // Foreach
+        // Map
+        // Some
+        // Find
+        // Filter
+
+
+        function sum(num1, num2) {
+            if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+                throw "not number"
+            } else {
+                return num1 + num2;
+            }
+        }
+
+        function handler() {
+            try {
+                // alert("this is syntax error!")
+                var result = sum(2, '3');
+                console.log("result", result);
+
+            } catch (error) {
+                console.log("error", error);
+            } finally {
+
+            }
+        }
+
+        var counter = 0;
+        var interval = null;
+        function startCounter() {
+            interval = setInterval(function () {
+                counter++;
+                document.getElementById("counter").innerText = counter
+            }, 2000)
+        }
+
+        function stopCounter() {
+            clearInterval(interval);
+        }
+
+        function xyz() {
+            console.log("this is xyz")
+        }
+        function abc() {
+            return xyz
+        }
+
+        var result = abc();
+        result();
+
+
+
+    </script>
+    <button onclick="startCounter()">start</button>
+    <button onclick="stopCounter()">stop</button>
+    <div id="counter"></div>
+
+</body>
+
+</html>
