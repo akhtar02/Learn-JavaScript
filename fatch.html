@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fetch</title>
+    <script>
+
+        // fetch
+        function getUsers() {
+            const baseUrl = 'https://api.github.com/users/akhtar02';
+            fetch(baseUrl)
+                .then(function (res) {
+                    return res.json();
+                })
+                .then(function (result) {
+                    console.log(result);
+                })
+                .catch(function (err) {
+                    console.log('error', err);
+                })
+        }
+
+    </script>
+</head>
+
+<body>
+    <button onclick="getUsers()">Fetch</button>
+</body>
+
+</html>
