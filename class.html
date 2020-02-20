@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Class</title>
+    <script>
+        /**
+        |------------------------------------------
+        | CLASS
+        |------------------------------------------
+        */
+        // Global Function
+        function displayVal() {
+            console.log('12');
+        }
+        // Parent Class
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+            displayName() {
+                setTimeout(() => {
+                    // displayVal(); // global function invoke
+                    console.log(this.name); // parent referance
+                }, 1000);
+            }
+        };
+
+        let lion = new Animal('Lion');
+        console.log(lion);
+        let cat = new Animal('Cat');
+        console.log(cat);
+        cat.displayName();
+
+        // Child Class
+        class Fish extends Animal {
+            constructor(name) {
+                // invoke super only if child class posses constructor
+                super(name);
+                this.swimming = true;
+            }
+        };
+        let fish = new Fish('Shark');
+        console.log(fish);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
