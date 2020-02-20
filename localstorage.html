@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Local Storage</title>
+    <script>
+
+        /**
+        |----------------------------------------------------
+        | LOCALSTORAGE
+        |----------------------------------------------------
+        */
+
+        // Setting Value in LocalStorage
+        // STRING
+        let userName = 'John';
+        localStorage.setItem('name', userName);
+        localStorage.setItem('age', 25);
+        let getValues = () => {
+            // Get Value from LocalStorage
+            let localName = localStorage.getItem('name');
+            let localAge = localStorage.getItem('age');
+            console.log(localName, localAge);
+            let student = localStorage.getItem('student');
+            console.log(student);
+            // parsing JSON to normal object
+            student = JSON.parse(student);
+            console.log(student);
+        }
+
+        // Array | Object
+        let person = {
+            name: 'Ali',
+            age: 25,
+        };
+        // JSON -> Java Script Object Notation
+        let stringifyPerson = JSON.stringify(person);
+        localStorage.setItem('student', stringifyPerson);
+
+        // Remove single item
+        let removeNameFromLocalStorage = () => {
+            localStorage.removeItem('name');
+        }
+
+        // Remove all items
+        let removeLocalStorageValues = () => {
+            localStorage.clear();
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="getValues()">Get</button>
+    <button onclick="removeNameFromLocalStorage()">Remove</button>
+    <button onclick="removeLocalStorageValues()">Remove All</button>
+</body>
+
+</html>
