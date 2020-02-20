@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Object</title>
+</head>
+<script>
+
+    // // Object's pre-defined methods
+    // var std = {
+    //     firstName: "John",
+    //     lastName: 'Doe',
+    //     email: "john@abc.com",
+    //     getFullName: function () {
+    //         return std.firstName + " " + std.lastName;
+    //     },
+    // };
+    // // Get keys/Values through loop
+    // let keys = [];
+    // let values = [];
+    // for (let key in std) {
+    //     keys.push(key);
+    //     values.push(std[key]);
+    // }
+    // console.log(keys, values);
+
+    // // get keys/values through object methods
+    // let keys = Object.keys(std)
+    // let values = Object.values(std)
+    // console.log(keys, values);
+
+    // // Constructor
+    // function Student(firstName, lastName, age, gender, className, getFullName) {
+    //     this.first_name = firstName;
+    //     this.last_name = lastName;
+    //     this.age = age;
+    //     this.gender = gender;
+    //     this.class_name = className;
+    //     this.get_full_name = getFullName;
+    // }
+
+    // function fullName() {
+    //     return 'anything';
+    // }
+
+    // // creating object through constructor
+    // let std1 = new Student('John', 'Doe', 18, 'male', 'English', fullName);
+    // let std2 = new Student('Jane', 'Dane', 17, 'female', 'Science', fullName);
+    // console.log(std1);
+    // console.log(std2);
+
+
+    // this can be categorize in 4 areas
+    // Global
+    // Normal Object
+    // Constructor
+    // Document
+
+    // console.log(this); // global this
+    // function abc() {
+    //     console.log(this); // global this
+    // }
+    // abc();
+
+    // var std = {
+    //     firstName: "John",
+    //     lastName: 'Doe',
+    //     email: "john@abc.com",
+    //     getFullName: function () {
+    //         console.log(this);
+    //     },
+    // };
+    // std.getFullName(); // object this
+
+
+    // // Object's Prototype
+    // function Student(firstName, lastName, age, gender, className) {
+    //     var total_sem_fee = 90000; // private variable
+    //     this.first_name = firstName;
+    //     this.last_name = lastName;
+    //     this.age = age;
+    //     this.gender = gender;
+    //     this.class_name = className;
+    //     this.get_total_sem_fee = function () {
+    //         return total_sem_fee; // getter function
+    //     }
+    //     // console.log(this) // constructor this
+    // }
+    // Student.fee = 9000; // static variable
+
+    // Student.prototype.getFullName = function () {
+    //     return this.first_name; // prototypal methods
+    // }
+    // console.log(Student.fee);
+    // let std1 = new Student('John', 'Doe', 18, 'male', 'English');
+    // let std2 = new Student('Jane', 'Dane', 17, 'female', 'Science');
+    // console.log(std1);
+    // console.log(std2);
+
+
+
+</script>
+
+<body>
+    <!-- document this -->
+    <!-- <button onclick="console.log(this)">Click Here</button>
+    <img src="./../../../Documents/a.png" alt="" onclick="console.log(this)"> -->
+</body>
+
+</html>
