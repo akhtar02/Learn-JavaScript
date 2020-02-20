@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add Update Delete</title>
+    <script>
+    
+    //add delete update codings
+        let classes = [];
+        let emails = [];
+        let names = [];
+        let editingIndex = -1;
+
+
+
+        function SaveRecord() {
+            // Get from fields
+            let name = document.getElementById("name").value
+            let email = document.getElementById("email").value
+            let myclass = document.getElementById("class").value
+            // save in array
+            names.push(name);
+            classes.push(myclass);
+            emails.push(email);
+            renderTable();
+        }
+
+        function renderTable() {
+            let tableData = document.getElementById("table")
+            let record = '<table><thead><tr><th>S.no</th><th>Name</th><th>Email</th><th>Class</th><th></th><th></th></tr></thead><tbody>'
+            for (let i = 0; i < names.length; i++) {
+                record += '<tr>' +
+                    '<td>' + i + '</td>' +
+                    '<td>' + names[i] + '</td>' +
+                    '<td>' + emails[i] + '</td>' +
+                    '<td>' + classes[i] + '</td>' +
+                    '<td><button onClick="editRow(' + i + ')">Edit</button></td>' +
+                    '<td><button onClick="deleteRow(' + i + ')">Delete</button></td>' +
+                    '</tr>'
+            }
+            record += '</tbody></table>';
+            tableData.innerHTML = record;
+        }
+
+        function editRow(index) {
+            // To show edit button and hide save button
+            document.getElementById("save").style.display = 'none'
+            document.getElementById("update").style.display = 'inline'
+            // To store current editing index
+            editingIndex = index;
+            // To assign array index values to fields
+            document.getElementById("name").value = names[index]
+            document.getElementById("email").value = emails[index]
+            document.getElementById("class").value = classes[index]
+
+        }
+
+        function deleteRow(index) {
+            names.splice(index, 1)
+            emails.splice(index, 1)
+            classes.splice(index, 1)
+            renderTable()
+        }
+
+        function UpdateRecord() {
+            // To show edit button and hide save button
+            document.getElementById("save").style.display = 'block'
+            document.getElementById("update").style.display = 'none'
+            // Get from fields
+            let name = document.getElementById("name").value
+            let email = document.getElementById("email").value
+            let myclass = document.getElementById("class").value
+            // To update in array
+            names[editingIndex] = name;
+            emails[editingIndex] = email;
+            classes[editingIndex] = myclass;
+            // To reset index
+            editingIndex = -1;
+            // Render again with updated data
+            renderTable();
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <input type="text" id="name">
+    <input type="email" id="email">
+    <input type="text" id="class">
+    <button id='save' onclick="SaveRecord()">Save</button>
+    <button id='update' onclick="UpdateRecord()" style="display: none">Update</button>
+
+    <div id="table">
+
+    </div>
+</body>
+
+</html>
